@@ -1,0 +1,105 @@
+---
+title: "week_07_notes"
+author: "Andrew Nalundasan"
+date: "11/08/2021"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    number_sections: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview Video
+
++ continue to study AR models
++ modules > solution videos for selected problems
+
+    + walk thru of ch7-Q6
+    
++ DTC: 
+
+    1. Plot ACF and PACF
+    2. Look at pattern to see if should use MA or AR process
+    3. Model process
+    4. Determine order of process
+    5. Check-in with Professor
+    + ensure using a univariate TS
+
+## Week 7 Videos on my notes
+
+1. Stationarity of AR(2) Process
+
++ order is determined by the highest sub_number in the model
+
+    + Y_t = c + phi_1 * Y_t-1 + phi_2 * Y_t-2 + Eps_t
+        + this indicates order 2
+    + Necessary condition:
+        + -1 < phi_2 < 1
+        + -2 < phi_1 < 2
+            + if these conditions hold, then Y-t is stationary
+    + Sufficient condition: 
+        + phi_1 + phi_2 < 1
+        + phi_2 - phi_1 < 1
+            + if these conditions hold, then Y_t is covariance stationary
+            
++ If Y_t process is stationary, then we can calculate unbiased mean
++ if phi_1 and phi_2 == 0, then mu is undefined
+
+2. Optimal forecast of AR(2) when h=1
+
++ h=1 (horizon)
++ heaps of maths stuff
+
+    1. Calculate optimal forecast
+    2. Forecast error
+    3. Forecast Variance (uncertainty)
+    4. Density forecast
+        + has normal distribution with mu
+        
+3. Optimal forecast of AR(2) when h=2
+
++ pretty much add elements to all equations with subscript 1 and subscript 2
+
+4. Optimal forecast of AR(2) when h=s
+
++ 's periods ahead'
++ pretty much change subscripts to "t + s"
+
++ example: 
+
+    + e_t,2 = Eps_t+2 + phi_1 * e_t, 1 + phi_2 * e_t, 0 = Eps_t+2 + phi_1 * Eps_t+1
+    + == (phi_1**3 + phi_1*phi_2 + phi_1) * sigma**2 * e
+    
+5. Stationarity of AR(p) process
+
++ we mean the AR process with p-lagged periods
+
++ Necessary Condition: 
+    
+    + Y_t is stationary
+    + --> phi_1 + phi_2 + ... + phi_p < 1
+    
+6. The optimal forecast of AR(p) process
+
++ h=s
++ chain rule of forecasting
++ heaps of maths stuff
+
+## Practice problem
+
+
+
+
+## Chapter 7 textbook readings
+
++ If necessary conditions are satisfied, the process is covariance stationary
+
+
+
+
+
